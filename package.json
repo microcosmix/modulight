@@ -1,0 +1,54 @@
+{
+  "name": "modulight",
+  "version": "0.0.1",
+  "description": "Libreria para gestionar modulos en Node y Typescript, uso muy similar a NestJS o Angular",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --watch",
+    "test": "vitest",
+    "check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "angular",
+    "nestjs",
+    "modules",
+    "library"
+  ],
+  "author": "Nelson R. Graña Vivas nelsongraa8@gmail.com (https://github.com/nelsongraa8)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microcosmix/modulight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microcosmix/modulight/issues"
+  },
+  "homepage": "https://github.com/microcosmix/modulight#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {},
+  "devDependencies": {
+    "reflect-metadata": "^0.2.2",
+    "eslint": "^9.25.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
