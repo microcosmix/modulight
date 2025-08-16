@@ -1,19 +1,10 @@
 {
-  "name": "modulight",
+  "name": "@microcosmix/modulight",
   "version": "0.0.1",
   "description": "Libreria para gestionar modulos en Node y Typescript, uso muy similar a NestJS o Angular",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --watch",
-    "test": "vitest",
-    "check": "tsc --noEmit",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --ext .ts --fix",
-    "format": "prettier --write src"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -36,11 +27,22 @@
   "bugs": {
     "url": "https://github.com/microcosmix/modulight/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/microcosmix/modulight#readme",
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --watch",
+    "test": "vitest",
+    "check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src"
+  },
   "dependencies": {},
   "devDependencies": {
     "reflect-metadata": "^0.2.2",
@@ -50,5 +52,6 @@
     "tsup": "^8.4.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
-  }
+  },
+  "packageManager": "pnpm@10.10.0"
 }
