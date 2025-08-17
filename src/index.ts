@@ -1,13 +1,5 @@
-import { CoreModule } from "./core.module";
-import { ModuleRegistry } from "./module.registry";
+import "reflect-metadata"; // importante para usar decoradores y Reflect API
 
-// Obtener la metadata del módulo
-const metadata = Reflect.getMetadata("module:metadata", CoreModule);
+export * from "./decorators/module.decorator";
 
-// Registrar el módulo en el registry
-ModuleRegistry.register(CoreModule, metadata);
-
-const publicClasses = ModuleRegistry.resolve(CoreModule);
-
-// Lanzar la clase por consola
-console.log(publicClasses);
+export * from "./module.registry";
